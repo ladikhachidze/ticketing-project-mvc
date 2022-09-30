@@ -9,6 +9,7 @@ public class RoleServiceImpl extends AbstractMapService<RoleDTO,Long> implements
 
     @Override
     public RoleDTO save(RoleDTO role) {
+
         return super.save(role.getId(),role);
     }
 
