@@ -64,4 +64,11 @@ public class TaskServiceImpl extends AbstractMapService<TaskDTO,Long> implements
     }
 
 
+    @Override
+    public List<TaskDTO> finTaskByManager(UserDTO manager) {
+
+        return findAll().stream().filter(task->task.getProject().getAssignedManager().equals(manager)).collect(Collectors.toList());
+    }
+
+
 }
